@@ -1,18 +1,35 @@
 <?php
-class Queue{
-    protected $front;
-    protected $back;
-
-
-    /*public function isEmty()
+include_once 'Node.php';
+class Queue
+{
+    protected $front =null;
+    protected $back = null;
+    private $font;
+/*Kiểm tra xem queue có rỗng hay không*/
+    public function isEmpty()
     {
-
-    }*/
-
-/*Thêm value vào phần đuôi của Queue*/
-
-    public function enqueue()
+        return $this->font == null;
+    }
+    /*Thêm value vào đuôi của queue*/
+    public function enqueue($value)
     {
-        
-  }
+        $oldBack = $this->back;
+        $this->back = new Node();
+        $this->back->value = $value;
+        if ($this->isEmpty()) {
+            $this->font = $this->back;
+        } else {
+            $oldBack->next = $this->back;
+        }
+    }
+   /* lấy ra phânf đầu của queue*/
+    public function dequeue()
+    {
+        if ($this->isEmpty()) {
+            return null;
+        }
+        $removedValue = $this->font->value;
+        $this->font = $this->font->next;
+        return $removedValue;
+    }
 }

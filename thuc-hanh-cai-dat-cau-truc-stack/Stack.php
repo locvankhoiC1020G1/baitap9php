@@ -33,7 +33,7 @@ class Stack{
     }
 /*kiểm tra xem stack có phần tử nào không*/
     public function isEmpty() {
-       if (count($this->stack) >0) {
+       if (is_null($this->stack))  {
 
            echo "có phần tử";
        }

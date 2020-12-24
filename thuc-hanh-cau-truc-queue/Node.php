@@ -1,6 +1,8 @@
 <?php
-class Node{
-protected $value;
-protected $next;
+
+class Node
+{
+    public $value;
+    protected $next;
 
 }
